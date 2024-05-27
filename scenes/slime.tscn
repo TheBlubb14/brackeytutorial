@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://q0oejtojc4jp"]
 
 [ext_resource type="Texture2D" uid="uid://w4yxo63hhntc" path="res://assets/sprites/slime_green.png" id="1_1l4dp"]
-[ext_resource type="Script" path="res://scripts/slime.gd" id="1_vxwch"]
+[ext_resource type="Script" path="res://scripts/slime.gd" id="1_mreb0"]
 [ext_resource type="PackedScene" uid="uid://yj0kckwwretx" path="res://scenes/killzone.tscn" id="2_j4276"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6o6vu"]
@@ -44,7 +44,7 @@ animations = [{
 size = Vector2(14, 12)
 
 [node name="slime" type="Node2D"]
-script = ExtResource("1_vxwch")
+script = ExtResource("1_mreb0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)

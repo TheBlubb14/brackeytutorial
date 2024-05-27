@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://blpkubrawspwb"]
+[gd_scene load_steps=23 format=3 uid="uid://blpkubrawspwb"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_6a0fi"]
 [ext_resource type="PackedScene" uid="uid://b30a0v0tr8k2p" path="res://scenes/player.tscn" id="1_peymt"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://q0oejtojc4jp" path="res://scenes/slime.tscn" id="6_lf8wp"]
 [ext_resource type="FontFile" uid="uid://byowxcjf1w000" path="res://assets/fonts/PixelOperator8.ttf" id="7_24bpv"]
 [ext_resource type="FontFile" uid="uid://djf2m05tkdgna" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_baxqu"]
+[ext_resource type="PackedScene" uid="uid://cvj0e30c8n4kg" path="res://scenes/question_block.tscn" id="10_5w3j3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pvo2f"]
 texture = ExtResource("2_eidm4")
@@ -492,6 +493,21 @@ _data = {
 "move": SubResource("Animation_kd2kt")
 }
 
+[sub_resource type="Animation" id="Animation_2nwjb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(560, -70)]
+}
+
 [sub_resource type="Animation" id="Animation_gy53i"]
 resource_name = "move"
 length = 2.0
@@ -507,21 +523,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(560, -70), Vector2(560, -146), Vector2(485, -161), Vector2(485, -266)]
-}
-
-[sub_resource type="Animation" id="Animation_2nwjb"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(560, -70)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nx6p4"]
@@ -649,3 +650,6 @@ theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
 theme_override_fonts/font = ExtResource("7_24bpv")
 theme_override_font_sizes/font_size = 8
 text = "You made it!"
+
+[node name="question_block" parent="." instance=ExtResource("10_5w3j3")]
+position = Vector2(130, -76)
