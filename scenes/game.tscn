@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://blpkubrawspwb"]
 
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_6a0fi"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_dhc20"]
 [ext_resource type="PackedScene" uid="uid://b30a0v0tr8k2p" path="res://scenes/player.tscn" id="1_peymt"]
 [ext_resource type="Texture2D" uid="uid://dspw48jgdw26g" path="res://assets/sprites/world_tileset.png" id="2_eidm4"]
 [ext_resource type="PackedScene" uid="uid://bxjd7imiq4k8g" path="res://scenes/platform.tscn" id="3_wv4id"]
@@ -532,22 +532,7 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
-
-[node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("1_6a0fi")
-
-[node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = -296.0
-offset_top = -318.0
-offset_right = -217.0
-offset_bottom = -288.0
-theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
-theme_override_fonts/font = ExtResource("9_baxqu")
-theme_override_font_sizes/font_size = 8
-text = "You collected 0 coins"
-horizontal_alignment = 1
-autowrap_mode = 2
+script = ExtResource("1_dhc20")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_dgrav")
@@ -650,6 +635,19 @@ theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
 theme_override_fonts/font = ExtResource("7_24bpv")
 theme_override_font_sizes/font_size = 8
 text = "You made it!"
+
+[node name="ScoreLabel" type="Label" parent="Labels"]
+unique_name_in_owner = true
+offset_left = -296.0
+offset_top = -318.0
+offset_right = -217.0
+offset_bottom = -288.0
+theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("9_baxqu")
+theme_override_font_sizes/font_size = 8
+text = "You collected 0 coins"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="question_block" parent="." instance=ExtResource("10_5w3j3")]
 position = Vector2(130, -76)
