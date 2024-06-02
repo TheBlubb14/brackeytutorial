@@ -21,6 +21,8 @@ public partial class slimes : Node2D
     {
         base._Ready();
         OnReady();
+
+        GD.Load<PackedScene>("").Instantiate().AddChild;
     }
 
     public override void _Process(double delta)
