@@ -1,12 +1,8 @@
 name: Deploy godot web to GitHub Pages
 env:
-  GODOT_VERSION: 4.2.2-stable
+  GODOT_VERSION: 4.2.2
   
 on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -26,7 +22,7 @@ jobs:
     name: Web Export
     runs-on: ubuntu-20.04
     container:
-      image: barichello/godot-ci:4.2.2-stable
+      image: barichello/godot-ci:4.2.2
     steps:
       - name: Checkout
         uses: actions/checkout@v4
