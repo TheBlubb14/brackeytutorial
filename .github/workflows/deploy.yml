@@ -44,12 +44,6 @@ jobs:
           sed -i 's|headers.set("Cross-Origin-Embedder-Policy", "credentialless")|headers.set("Cross-Origin-Embedder-Policy", "require-corp")|g'  enable-threads.js
           sed -i 's|<script src="index.js"></script>|<script src="enable-threads.js"></script><script src="index.js"></script>|g' index.html
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: web
-          path: build/web
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
