@@ -1,6 +1,7 @@
 name: Deploy godot web to GitHub Pages
 env:
-  GODOT_VERSION: 4.3-beta2
+  GODOT_VERSION: 4.3
+  RELEASE_NAME: beta2
   
 on:
   # Allows you to run this workflow manually from the Actions tab
@@ -32,7 +33,7 @@ jobs:
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates
-          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.${RELEASE_NAME} ~/.local/share/godot/export_templates/${GODOT_VERSION}.${RELEASE_NAME}
       - name: Web Build
         run: |
           mkdir -v -p build/web
